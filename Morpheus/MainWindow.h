@@ -7,6 +7,7 @@
 #include "QImage"
 #include "AspectRationPixmapLabel.h"
 #include "MorphDialog.h"
+#include "AdaptativeGaussianMorpher.h"
 
 
 class MainWindow : public QMainWindow
@@ -23,6 +24,14 @@ private:
     AspectRatioPixmapLabel* centralImage;
     QToolBar* toolBar;
     QAction* morphAction;
+
+    MorphDialog* morphDialog;
+
+    void setMorphParameters();
+
+    AdaptativeGaussianMorpher* morpher;
+
+    void updateFrame(const QImage& f);
 
 
 

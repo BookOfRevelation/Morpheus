@@ -15,8 +15,16 @@ TEMPLATE = app
 SOURCES += main.cpp\
         MainWindow.cpp \
     AspectRationPixmapLabel.cpp \
-    MorphDialog.cpp
+    MorphDialog.cpp \
+    InlineLoader.cpp \
+    Morpher.cpp \
+    AdaptativeGaussianMorpher.cpp \
+    PureCore.cpp
 
 HEADERS  += MainWindow.h \
     AspectRationPixmapLabel.h \
-    MorphDialog.h
+    MorphDialog.h \
+    InlineLoader.h \
+    Morpher.h \
+    AdaptativeGaussianMorpher.h \
+    PureCore.h
