@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QAction>
 #include <QToolBar>
+#include <QProgressBar>
 #include "QImage"
 #include "AspectRationPixmapLabel.h"
 #include "MorphDialog.h"
@@ -24,6 +25,7 @@ private:
     AspectRatioPixmapLabel* centralImage;
     QToolBar* toolBar;
     QAction* morphAction;
+    QProgressBar* progressBar;
 
     MorphDialog* morphDialog;
 

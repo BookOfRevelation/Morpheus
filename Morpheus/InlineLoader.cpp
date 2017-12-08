@@ -2,7 +2,7 @@
 #include <QFileDialog>
 
 InlineLoader::InlineLoader(const QString& ttl, LoadType lt)
-    : QWidget(), loadType(lt)
+    : QWidget(), loadType(lt), baseDir("./")
 {
     mainLayout = new QBoxLayout(QBoxLayout::LeftToRight);
     title = new QLabel(ttl);
@@ -34,13 +34,15 @@ void InlineLoader::loadRessource()
     case DIR:
         res = QFileDialog::getExistingDirectory(
                     nullptr,
-                    "Folder"
+                    "Folder",
+                    baseDir
                     );
         break;
     case IMAGE:
         res = QFileDialog::getOpenFileName(
                     this,
-                    tr("Open Image"), "./",
+                    tr("Open Image"),
+                    baseDir,
                     tr("Image Files (*.png *.jpg *.bmp)")
                     );
     default:
@@ -54,4 +56,9 @@ void InlineLoader::loadRessource()
         emit ressourceLoaded(res);
     }
 
+}
+
+void InlineLoader::setBaseDirectory(const QString &dir)
+{
+    baseDir = dir;
 }

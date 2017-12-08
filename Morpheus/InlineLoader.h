@@ -23,6 +23,8 @@ public:
 
     QString getFilePath();
 
+    void setBaseDirectory(const QString& dir);
+
 signals:
 
     void ressourceLoaded(const QString& res);
@@ -30,11 +32,14 @@ signals:
 private:
 
     LoadType loadType;
+    QString baseDir;
 
     QBoxLayout* mainLayout;
     QLabel* title;
     QLineEdit* lineEdit;
     QPushButton* button;
+
+
 
     void loadRessource();
 

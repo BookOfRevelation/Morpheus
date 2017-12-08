@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     InlineLoader.cpp \
     Morpher.cpp \
     AdaptativeGaussianMorpher.cpp \
-    PureCore.cpp
+    PureCore.cpp \
+    PureConfiguration.cpp
 
 HEADERS  += MainWindow.h \
     AspectRationPixmapLabel.h \
@@ -27,4 +28,5 @@ HEADERS  += MainWindow.h \
     InlineLoader.h \
     Morpher.h \
     AdaptativeGaussianMorpher.h \
-    PureCore.h
+    PureCore.h \
+    PureConfiguration.h

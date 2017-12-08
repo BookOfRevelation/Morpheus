@@ -1,6 +1,7 @@
 #include "AdaptativeGaussianMorpher.h"
 #include "PureCore.h"
 #define TOLERANCE 0.01
+#define SPEED_FACTOR 0.005
 
 AdaptativeGaussianMorpher::AdaptativeGaussianMorpher()
     : Morpher()
@@ -21,36 +22,36 @@ void AdaptativeGaussianMorpher::morph()
 
 
             QColor newCol;
-            float newRed;
-            float newGreen;
-            float newBlue;
+            float newRed = 0.0f;
+            float newGreen = 0.0f;
+            float newBlue = 0.0f;
             if(curCol.red() > goalCol.red()+TOLERANCE)
             {
-               newRed = curCol.redF() - 0.002;
+               newRed = curCol.redF() - SPEED_FACTOR;
             }
             else if(curCol.red() < goalCol.red()-TOLERANCE)
             {
-                newRed = curCol.redF() + 0.002;
+                newRed = curCol.redF() + SPEED_FACTOR;
             }
 
 
             if(curCol.green() > goalCol.green()+TOLERANCE)
             {
-                newGreen = curCol.greenF() - 0.002;
+                newGreen = curCol.greenF() - SPEED_FACTOR;
             }
             else if(curCol.green() < goalCol.green()-TOLERANCE)
             {
-                newGreen = curCol.greenF() + 0.002;
+                newGreen = curCol.greenF() + SPEED_FACTOR;
             }
 
 
             if(curCol.blue() > goalCol.blue()+TOLERANCE)
             {
-                newBlue = curCol.blueF() - 0.002;
+                newBlue = curCol.blueF() - SPEED_FACTOR;
             }
             else if(curCol.blue() < goalCol.blue()-TOLERANCE)
             {
-                newBlue = curCol.blueF() + 0.002;
+                newBlue = curCol.blueF() + SPEED_FACTOR;
             }
 
             if(newRed < 0)

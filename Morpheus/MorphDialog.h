@@ -5,6 +5,7 @@
 #include <QLayout>
 #include <QComboBox>
 #include <QPushButton>
+#include <QSlider>
 #include "InlineLoader.h"
 
 class MorphDialog : public QDialog
@@ -17,6 +18,8 @@ public:
     InlineLoader* srcLoader;
     InlineLoader* desLoader;
     InlineLoader* dirLoader;
+
+    QSlider* iterationSlider;
 
 private:
 
